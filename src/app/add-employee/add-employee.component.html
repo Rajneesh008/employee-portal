@@ -1,0 +1,66 @@
+<div class="container">
+<form [formGroup]="employeeDetail" (submit)="onSumbit()">
+  <div>
+  <label for="id">Id</label>
+  <input type="text" class="form-control" formControlName="id" id="id"  placeholder="Enter Id">
+  <div *ngIf="id.invalid&&id.dirty" class="text-danger">
+    <div *ngIf="id.errors.required">
+      Id is required
+    </div>
+    <div *ngIf="id.errors.pattern">
+      Pattern not valid
+    </div>
+  </div>
+  </div>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" class="form-control" formControlName="name" id="name"  placeholder="Enter Name">
+    <div *ngIf="name.invalid && name.dirty" class="text-danger">
+      <div *ngIf="name.errors.required">
+        Name is required
+      </div>
+  </div>
+  </div>
+  <div>
+    <label for="department">Department</label>
+    <select name="department" id="department" formControlName="department" class="form-control">
+      <option value="null" disabled>Select the department</option>
+      <option *ngFor="let d1 of departments" value="{{d1}}">{{d1}}</option>
+    </select>
+    <div *ngIf="department.invalid&&department.dirty" class="text-danger">
+      <div *ngIf="department.invalid&& department.dirty">
+        Department is required
+      </div>
+  </div>
+  </div>
+  <div>
+    <label for="desgination">Desgination</label>
+    <select name="desgination" id="desgination" formControlName="designation" class="form-control">
+      <option value="null" disabled>Select the Degination</option>
+      <option *ngFor="let d1 of designations" value="{{d1}}">{{d1}}</option>
+    </select>
+    <div *ngIf="designation.invalid && designation.dirty" class="text-danger">
+      <div *ngIf="designation.errors.required">
+        Designation is required
+      </div>
+  </div>
+  </div>
+  <div>
+    <label for="gender">Gender</label><br>
+    <input type="radio" id="gender" formControlName="gender" value="Male">Male
+    <input type="radio" id="gender" formControlName="gender" value="Female">Female
+    <div *ngIf="gender.invalid && gender.dirty" class="text-danger">
+      <div *ngIf="designation.errors.required">
+        Gender is required
+      </div>
+  </div>
+  </div>
+  <div>
+    <label for="salary">Salary</label>
+    <input type="number" class="form-control" formControlName="salary" id="salary"  placeholder="Enter Salary">
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success">Submit</button>
+  </div>
+</form>
+</div>

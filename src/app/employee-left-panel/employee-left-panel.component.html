@@ -1,0 +1,58 @@
+<div class="container">
+  <ul class="group-item">
+    <li class="list-group-item bg-secondary font-weight-bold">Department</li>
+    <li class="list-group-item" *ngFor="let d1 of  departmentStruct.departments">
+      <input
+      id="{{d1}}"
+      type="radio"
+      name="radioGroup1"
+      value="{{d1}}"
+      checked="d1 === departementStruct.selected"
+      [(ngModel)]="departmentStruct.selected"
+      (change)="sendData()"
+      >{{d1}}
+    </li>
+  </ul>
+  <ul class="group-item">
+    <li class="list-group-item bg-secondary font-weight-bold">Designation</li>
+    <li class="list-group-item" *ngFor="let d1 of  designationStruct.designations">
+      <input
+      id="{{d1}}"
+      type="radio"
+      name="radioGroup2"
+      value="{{d1}}"
+      checked="d1 === designationStruct.selected"
+      [(ngModel)]="designationStruct.selected"
+      (change)="sendData()"
+      >{{d1}}
+    </li>
+  </ul>
+  <ul class="group-item">
+    <li class="list-group-item bg-secondary font-weight-bold">Gender</li>
+    <li class="list-group-item" *ngFor="let g1 of  genderStruct.gender">
+      <input
+      id="{{g1}}"
+      type="radio"
+      name="radioGroup3"
+      value="{{g1}}"
+      checked="d1 === genderStruct.selected"
+      [(ngModel)]="genderStruct.selected"
+      (change)="sendData()"
+      >{{g1}}
+    </li>
+  </ul>
+  <ul class="group-item">
+    <li class="list-group-item bg-secondary font-weight-bold">Salary</li>
+    <li class="list-group-item" *ngFor="let s1 of salaryStruct.amount">
+      <input
+      id="{{s1}}"
+      type="radio"
+      name="radioGroup4"
+      value="{{s1}}"
+      checked="d1 === salaryStruct.selected"
+      [(ngModel)]="salaryStruct.selected"
+      (change)="sendData()"
+      >{{s1}}
+    </li>
+  </ul>
+</div>
